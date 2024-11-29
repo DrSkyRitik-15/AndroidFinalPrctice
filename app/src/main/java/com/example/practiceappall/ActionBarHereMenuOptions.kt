@@ -2,8 +2,12 @@ package com.example.practiceappall
 
 import android.os.Bundle
 import android.view.Menu
+import androidx.appcompat.widget.Toolbar // Correct import
+
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.Toast
+
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -20,35 +24,44 @@ class ActionBarHereMenuOptions : AppCompatActivity() {
             insets
         }
 
-        fun onCreateOptionsMenu(menu: Menu?): Boolean {
-            menuInflater.inflate(R.menu.file_menu, menu)
+    //go project new, new resoure directoy, name menu,type menu,  ok
+    val t: Toolbar = findViewById<Toolbar>(R.id.yoolo)
+    setSupportActionBar(t)
 
-            return super.onCreateOptionsMenu(menu)
+}
+
+
+
+
+    override  fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    menuInflater.inflate(R.menu.file_menu, menu)
+//
+    return super.onCreateOptionsMenu(menu)
+}
+
+override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    return when (item.itemId) {
+        R.id.One -> {
+            Toast.makeText(this, "You select Search", Toast.LENGTH_LONG).show()
+            true
         }
 
-        fun onOptionsItemSelected(item: MenuItem): Boolean {
-            return when (item.itemId) {
-                R.id.One -> {
-                    Toast.makeText(this, "You select Search", Toast.LENGTH_LONG).show()
-                    true
-                }
-
-                R.id.Two -> {
-                    Toast.makeText(this, "You select Share", Toast.LENGTH_LONG).show()
-                    true
-                }
-                R.id.Facebook -> {
-                    Toast.makeText(this, "You select FaceBook", Toast.LENGTH_LONG).show()
-                    true
-                }
-                R.id.Whatapp -> {
-                    Toast.makeText(this, "You select Whatapps", Toast.LENGTH_LONG).show()
-                    true
-                }
-
-
-                else -> super.onOptionsItemSelected(item)
-            }
+        R.id.Two -> {
+            Toast.makeText(this, "You select Share", Toast.LENGTH_LONG).show()
+            true
         }
+        R.id.Facebook -> {
+            Toast.makeText(this, "You select FaceBook", Toast.LENGTH_LONG).show()
+            true
+        }
+        R.id.Whatapp -> {
+            Toast.makeText(this, "You select Whatapps", Toast.LENGTH_LONG).show()
+            true
+        }
+
+
+        else -> super.onOptionsItemSelected(item)
+    }
     }
 }
+
