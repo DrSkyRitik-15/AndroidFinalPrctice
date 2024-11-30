@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat
 
 
 class permissionCamera : AppCompatActivity() {
-    private var c=1
+    private var c = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -45,9 +45,6 @@ class permissionCamera : AppCompatActivity() {
     }
 
 
-
-
-
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -55,15 +52,11 @@ class permissionCamera : AppCompatActivity() {
 
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if(requestCode==c)
-        {
-            if(grantResults[0]==PackageManager.PERMISSION_GRANTED)
-            {
-                Toast.makeText(this,"Okokkkkkkkkkkk",Toast.LENGTH_LONG).show()
-            }
-            else
-            {
-                Toast.makeText(this,"Ozooooom",Toast.LENGTH_SHORT).show()
+        if (requestCode == c) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "Okokkkkkkkkkkk", Toast.LENGTH_LONG).show()
+            } else {
+                Toast.makeText(this, "Ozooooom", Toast.LENGTH_SHORT).show()
             }
         }
     }
