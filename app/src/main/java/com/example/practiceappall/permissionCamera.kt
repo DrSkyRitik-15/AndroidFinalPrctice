@@ -51,7 +51,7 @@ class permissionCamera : AppCompatActivity() {
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
-        grantResults: IntArray
+        grantResults: IntArrays
 
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
